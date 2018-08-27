@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.11.2)
-project(Boost)
+project(boost)
 message(STATUS "------------------------------------")
 message(STATUS "---   Coding Everything!          --")
 message(STATUS "------------------------------------")
@@ -29,7 +29,8 @@ ENDIF ()
 
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/lib)
+
 
 # 直接把相应的子目录加进来就行了
 add_subdirectory(src/PropertyTree)

@@ -5,12 +5,12 @@ message(STATUS "------------------------------------")
 
 
 # 查找库
-include_directories(main)
-include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(main/Header)
+#include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # 查找当前目录下的所有源文件
 # 并将名称保存到 DIR_SRCS 变量
-aux_source_directory(main DIR_SRCS1)
+aux_source_directory(main/Source DIR_SRCS1)
 aux_source_directory(test DIR_SRCS1)
 set(SRC_LIST ${DIR_SRCS1} )
 message(STATUS "当前的source文件:" ${SRC_LIST})
@@ -31,11 +31,11 @@ message(STATUS "当前的source文件:" ${SRC_LIST})
 #SET_TARGET_PROPERTIES(property_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 #############################################################
 ## 直接生成运行文件，运行对应的信息即可
-link_directories(${PROJECT_SOURCE_DIR}/lib/mac/gtest)
-link_directories(${PROJECT_SOURCE_DIR}/lib/mac/boost)
-
-link_libraries(gtest)
-link_libraries(gtest_main)
+#link_directories(${PROJECT_SOURCE_DIR}/lib/mac/gtest)
+#link_directories(${PROJECT_SOURCE_DIR}/lib/mac/boost)
+#
+#link_libraries(gtest)
+#link_libraries(gtest_main)
 
 ADD_EXECUTABLE(propertyUnit ${SRC_LIST})
 TARGET_LINK_LIBRARIES(propertyUnit gtest gtest_main)

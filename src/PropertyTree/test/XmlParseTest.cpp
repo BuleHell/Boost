@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "../main/XmlParser.h"
+#include "XmlParser.h"
 
 namespace {
     TEST(Base_Solution1_test1_Test,test1)

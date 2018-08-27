@@ -25,4 +25,6 @@ public:
 };
 
 
-#endif //BOOST_XMLPARSER_H
+#endif
+
+//BOOST_XMLPARSER_H

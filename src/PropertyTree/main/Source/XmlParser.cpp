@@ -22,7 +22,8 @@ void XmlParser::load(const std::string &filename) {
     // Use get_child to find the node containing the modules, and iterate over
     // its children. If the path cannot be resolved, get_child throws.
     // A C++11 for-range loop would also work.
-    BOOST_FOREACH(pt::ptree::value_type &v, tree.get_child("debug.modules")) {
+    BOOST_FOREACH(pt::ptree::value_type &v, tree.get_child("debug.modules"))
+                {
                     // The data function is used to access the data stored in a node.
                     m_modules.insert(v.second.data());
                 }
