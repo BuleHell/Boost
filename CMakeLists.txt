@@ -34,3 +34,4 @@ SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/lib)
 
 # 直接把相应的子目录加进来就行了
 add_subdirectory(src/PropertyTree)
+add_subdirectory(src/StandardLibrary)

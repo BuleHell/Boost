@@ -7,7 +7,7 @@
 void XmlParser::load(const std::string &filename) {
     // Create empty property tree object
     pt::ptree tree;
-
+	std::cout<<"数个中文"<<std::endl;
     // Parse the XML into the property tree.
     pt::read_xml(filename, tree);
 

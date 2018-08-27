@@ -1,6 +1,6 @@
 # 输出一些信息
 message(STATUS "------------------------------------")
-message(STATUS "---   PropertyTree                --")
+message(STATUS "---   StandardLibrary                --")
 message(STATUS "------------------------------------")
 
 
@@ -42,18 +42,15 @@ message(STATUS "当前的source文件:" ${SRC_LIST})
 file(GLOB ConfigFiles resource/*.xml resource/*.ini)
 MESSAGE(STATUS "config:${ConfigFiles}")
 
-add_custom_target(copy)
-foreach(ConfigFile ${ConfigFiles})
-    add_custom_command(TARGET copy PRE_BUILD
-            COMMAND ${CMAKE_COMMAND} -E
-            copy ${ConfigFile} ${PROJECT_BINARY_DIR})
-endforeach()
+#add_custom_target(copy)
+#foreach(ConfigFile ${ConfigFiles})
+#    add_custom_command(TARGET copy PRE_BUILD
+#            COMMAND ${CMAKE_COMMAND} -E
+#            copy ${ConfigFile} ${PROJECT_BINARY_DIR})
+#endforeach()
 
 
-ADD_EXECUTABLE(propertyUnit ${SRC_LIST})
-TARGET_LINK_LIBRARIES(propertyUnit gtest gtest_main)
-#拷贝文件
-#add_custom_command(TARGET MyTarget POST_BUILD
-#        COMMAND ${CMAKE_COMMAND} -E copy_directory
-#        ${CMAKE_SOURCE_DIR}/config $<TARGET_FILE_DIR:MyTarget>)
+ADD_EXECUTABLE(stdLibUnit ${SRC_LIST})
+TARGET_LINK_LIBRARIES(stdLibUnit gtest gtest_main)
+
 
