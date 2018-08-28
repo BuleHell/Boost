@@ -45,7 +45,7 @@ MESSAGE(STATUS "config:${ConfigFiles}")
 FOREACH(config ${ConfigFiles})
      message( STATUS "--->" ${config})
      STRING( REGEX REPLACE   ".+/(.+)$" "\\1"  prjName ${config} )
-         message( STATUS "22--->" ${prjName})
+     message( STATUS "22--->" ${prjName})
      message( STATUS "start --->" ${config})
 #     configure_file(${config} ${CMAKE_BINARY_DIR}/resource/${prjName})
 

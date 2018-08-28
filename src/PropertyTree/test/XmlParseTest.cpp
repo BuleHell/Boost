@@ -9,7 +9,7 @@ namespace {
     TEST(Base_Solution1_test1_Test,test1)
     {
         XmlParser a;
-        a.load("setting.xml");
+        a.load("../resource/setting.xml");
         std::cout<<a.m_file<<std::endl;
         std::cout<<a.m_level<<std::endl;
         std::set<std::string>::iterator i;
@@ -30,7 +30,7 @@ namespace {
 		i.insert("312");
 		i.insert("312");
 		a.m_modules=i;
-		a.save("setting2.xml");
+		a.save("../resource/setting2.xml");
 //		std::cout<<a.m_file<<std::endl;
 //		std::cout<<a.m_level<<std::endl;
 //		std::set<std::string>::iterator i;
