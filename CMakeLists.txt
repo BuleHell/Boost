@@ -32,6 +32,14 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/lib)
 
 
+
+MESSAGE(STATUS "开始编译子系统------------->")
+
+
 # 直接把相应的子目录加进来就行了
 add_subdirectory(src/PropertyTree)
 add_subdirectory(src/StandardLibrary)
+add_subdirectory(src/Log)
+add_subdirectory(src/DateTime)
+
+

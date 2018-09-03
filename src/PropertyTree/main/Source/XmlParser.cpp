@@ -4,20 +4,24 @@
 
 #include "XmlParser.h"
 
+// 获得文件
 void XmlParser::load(const std::string &filename) {
-    // Create empty property tree object
+
+    // 创建ptree对象
     pt::ptree tree;
-	std::cout<<"数个中文"<<std::endl;
-    // Parse the XML into the property tree.
+
+    // 读取XML文件到tree对象
     pt::read_xml(filename, tree);
 
-    // Use the throwing version of get to find the debug filename.
-    // If the path cannot be resolved, an exception is thrown.
+    // 通过路径获取元素：强制的类型
+    // 如果找不到对应的元素，就会抛出异常：
+    // 对于异常，我们可以抛出，也可以直接捕获，然后打印日志之类
     m_file = tree.get<std::string>("debug.filename");
 
-    // Use the default-value version of get to find the debug level.
-    // Note that the default value is used to deduce the target type.
+    // 通过路径获取元素：没有类型
+    // 获取的类型会被转化为对应的类型：如果没有对应的类型，会被转化为默认的类型
     m_level = tree.get("debug.level", 0);
+
 
     // Use get_child to find the node containing the modules, and iterate over
     // its children. If the path cannot be resolved, get_child throws.

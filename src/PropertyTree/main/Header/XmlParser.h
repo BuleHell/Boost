@@ -16,7 +16,7 @@ namespace pt = boost::property_tree;
 class XmlParser {
 
 public:
-        std::string m_file;               // log filename
+        std::string m_file;               // XML文件的名字
         int m_level;                      // debug level
         std::set<std::string> m_modules;  // modules where logging is enabled
 
