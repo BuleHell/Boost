@@ -1,6 +1,6 @@
 # 输出一些信息
 message(STATUS "------------------------------------")
-message(STATUS "---   PropertyTree                --")
+message(STATUS "---   LogLibrary                --")
 message(STATUS "------------------------------------")
 
 
@@ -43,18 +43,17 @@ file(GLOB ConfigFiles resource/*.xml resource/*.ini)
 MESSAGE(STATUS "config:${ConfigFiles}")
 
 FOREACH(config ${ConfigFiles})
-     message( STATUS "--->" ${config})
-     STRING( REGEX REPLACE   ".+/(.+)$" "\\1"  prjName ${config} )
-     message( STATUS "22--->" ${prjName})
-     message( STATUS "start --->" ${config})
-#     configure_file(${config} ${CMAKE_BINARY_DIR}/resource/${prjName})
+    message( STATUS "--->" ${config})
+    STRING( REGEX REPLACE   ".+/(.+)$" "\\1"  prjName ${config} )
+    message( STATUS "22--->" ${prjName})
+    message( STATUS "start --->" ${config})
+    #     configure_file(${config} ${CMAKE_BINARY_DIR}/resource/${prjName})
 
-         file(COPY ${config}  DESTINATION ${CMAKE_BINARY_DIR}/resource)
-#     add_custom_command(OUTPUT copy  COMMAND ${CMAKE_COMMAND} -E copy_directory  resource  ${EXECUTABLE_OUTPUT_PATH}/resource)
+    file(COPY ${config}  DESTINATION ${CMAKE_BINARY_DIR}/resource)
+    #     add_custom_command(OUTPUT copy  COMMAND ${CMAKE_COMMAND} -E copy_directory  resource  ${EXECUTABLE_OUTPUT_PATH}/resource)
 
 
 endforeach()
-
 
 #add_custom_target(copy)
 #foreach(ConfigFile ${ConfigFiles})
@@ -64,10 +63,7 @@ endforeach()
 #endforeach()
 
 
-ADD_EXECUTABLE(propertyUnit ${SRC_LIST})
-TARGET_LINK_LIBRARIES(propertyUnit gtest gtest_main)
-#拷贝文件
-#add_custom_command(TARGET MyTarget POST_BUILD
-#        COMMAND ${CMAKE_COMMAND} -E copy_directory
-#        ${CMAKE_SOURCE_DIR}/config $<TARGET_FILE_DIR:MyTarget>)
+ADD_EXECUTABLE(LogUnit ${SRC_LIST})
+TARGET_LINK_LIBRARIES(LogUnit gtest gtest_main)
+
 
