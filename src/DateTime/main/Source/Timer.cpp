@@ -3,6 +3,8 @@
 //
 
 
+
+#include <fstream>
 #include "Timer.h"
 
 
@@ -23,4 +25,17 @@ void Timer::test2() {
     }
     std::cout<<"消耗的时间是:"<<t.elapsed()<<"s(秒)"<<std::endl;
 
+}
+
+void Timer::ReadFile() {
+    std::vector<std::string> v(100);
+
+    progress_display display(v.size());
+
+    std::vector<std::string>::iterator pos;
+
+    for ( pos = v.begin(); pos != v.end() ; ++pos) {
+        std::cout<<*pos<<std::endl;
+        ++display;
+    }
 }

@@ -6,7 +6,10 @@
 #define BOOST_TIMER_H
 
 #include <iostream>
+#include <vector>
 #include <boost/timer.hpp>
+#include <boost/progress.hpp>
+
 
 using namespace boost;
 class Timer {
@@ -16,6 +19,10 @@ public:
 
     // 简单的使用
     void test2();
+
+    // 读取文件的时候的展示耗时
+    void ReadFile();
+
 };
 
 

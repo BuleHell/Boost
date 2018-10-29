@@ -15,4 +15,11 @@ namespace {
         Timer a;
         a.test2();
     }
+
+    TEST(Time_Test_test3_Test,test1)
+    {
+        Timer a;
+        a.ReadFile();
+    }
+
 }
